@@ -1,1 +1,73 @@
+To install Cassandra, this installation will use Ubuntu Linux either running on a virtual machine or as the host operating system.
 
+To set up Ubuntu Linux on a virtual machine:
+
+1. Downnload Oracle VirtualBox.
+   https://www.virtualbox.org/
+
+2. Download the Ubuntu Linux .iso file.
+   https://ubuntu.com/download/desktop
+
+3. When VirtualBox is installed and the iso file is downloaded, open VirtualBox and press "New".
+
+4. Create a name for the virtual machine, select Linux as the type, and Ubuntu as the version.
+
+5. Double-click on the machine once it's created, and choose to add a file to load the ubuntu iso file
+   when the option appears in the window.
+   
+6. Set-up Ubuntu. Restart Ubuntu by setting down the machine and then opening it again.
+
+7. After signing into Ubuntu Linux after opening the machine again, and go to the sidebar or search for
+   Terminal.
+   
+8. Open Terminal.
+
+10. The first step is to install the correct version of Java that Cassandra runs on (either Java 7 or 8):
+          
+          To download, type in the terminal with elevated priviledges:
+          
+          sudo apt-get install openjdk-8-jre
+          
+11. Create the JAVA_HOME and JRE_HOME environment variables, and set them to the path; all of them should be set 
+    permanently within the .bashrc profile for convenience:
+    
+    Go to and edit the .bashrc file with texteditor vim by typing:
+    
+     vi ~/.bashrc
+     
+     Scroll to the bottom of the file. If you have not already done so, press the 'Insert' button on
+     your keyboard to able to edit the file. At the bottom of the file, type:
+     
+     export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk'
+     export JRE_HOME='/usr/lib/jvm/java-1.8.0-openjdk/jre'
+     export PATH='$PATH:$JAVA_HOME/bin:$JRE_HOME/bin'
+     
+     (or wherever the the 'jvm' folder is downloaded
+     
+     To exit the texteditor, type:
+     
+     :q
+     
+12. To install Cassandra now, go to and copy and paste the steps into your terminal at the home folder
+    (though the location for this step doesn't actually matter; it just depends where you want the files
+     downloaded)
+     
+     Install curl by typing:
+     
+     sudo apt-get install curl
+     
+     Then type (or copy and paste) the commands found on Cassandra's site for install under the 
+     subheader "Installation for Debian packages" (Ubuntu is a strain of Debian Linux). The website
+     can be found here:
+     
+     https://cassandra.apache.org/download/
+     
+13. After following the steps on Cassandra's website, you should have Cassandra installed on your
+    virtual machine. Congratulations!
+     
+     
+     
+     
+     
+     
+          
