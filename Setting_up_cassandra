@@ -22,11 +22,19 @@ To set up Ubuntu Linux on a virtual machine:
    
 8. Open Terminal.
 
-10. The first step is to install the correct version of Java that Cassandra runs on (either Java 7 or 8):
+10. The first step is to install the correct version of Java that Cassandra runs on (either Java 7 or 8), the vim text editor, and curl:
           
-          To download, type in the terminal with elevated priviledges:
+          To download Java, type in the terminal with elevated priviledges:
           
           sudo apt-get install openjdk-8-jre
+          
+          To download vim, type in the terminal:
+          
+          sudo apt-get install vim
+          
+          To download curl, type in the terminal:
+          
+          sudo apt-get install curl
           
 11. Create the JAVA_HOME and JRE_HOME environment variables, and set them to the path; all of them should be set 
     permanently within the .bashrc profile for convenience:
@@ -38,11 +46,10 @@ To set up Ubuntu Linux on a virtual machine:
      Scroll to the bottom of the file. If you have not already done so, press the 'Insert' button on
      your keyboard to able to edit the file. At the bottom of the file, type:
      
-     export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk'
-     export JRE_HOME='/usr/lib/jvm/java-1.8.0-openjdk/jre'
-     export PATH='$PATH:$JAVA_HOME/bin:$JRE_HOME/bin'
+     export JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'
+     export JRE_HOME='/usr/lib/jvm/java-8-openjdk-amd64/jre'
      
-     (or wherever the the 'jvm' folder is downloaded
+     (or wherever the the 'jvm' folder is downloaded)
      
      To exit the texteditor, type:
      
@@ -52,11 +59,7 @@ To set up Ubuntu Linux on a virtual machine:
     (though the location for this step doesn't actually matter; it just depends where you want the files
      downloaded)
      
-     Install curl by typing:
-     
-     sudo apt-get install curl
-     
-     Then type (or copy and paste) the commands found on Cassandra's site for install under the 
+     Type (or copy and paste) the commands found on Cassandra's site for install under the 
      subheader "Installation for Debian packages" (Ubuntu is a strain of Debian Linux). The website
      can be found here:
      
